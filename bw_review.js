@@ -5,8 +5,8 @@
    Tutorial 11
    Case Problem 1
 
-   Author: 
-   Date:   
+   Author: Mackenzie Baker
+   Date:   3.13.2019
    
    Filename: bw_review.js
 	
@@ -34,7 +34,28 @@
 
 */
 
+// Runs the init function when the page is first loaded
+window.onload = init;
 
+// Creating the init function
+function init() {
+      // Storing all of the star reviews
+      var stars = document.querySelectorAll("span#stars img");
+      // Create a for loop to loop through the different star images
+      for (var i = 0; i < stars.length; i++) {
+            stars[i].style.cursor = "pointer";
+            document.addEventListener("mouseenter", lightStars);
+      }
+      // Add an event listener to update specified function when requirements are met
+      document.addEventListener("keyup", updateCount);
+}
+
+// Creating a function to color the the amount of stars that the users mouse hovers over
+function lightStars(e) {
+      // Setting star ratings values under specific variable
+      var starNumber = e.target.alt;
+      stars
+}
 
   
 
