@@ -35,7 +35,7 @@
 */
 
 // Runs the init function when the page is first loaded
-window.onload = init;
+window.onload = init; 
 
 // Creating the init function
 function init() {
@@ -54,13 +54,34 @@ function init() {
 function lightStars(e) {
       // Setting star ratings values under specific variable
       var starNumber = e.target.alt;
-      stars
+      // Storing all of the star reviews
+      var stars = document.querySelectorAll("span#stars img");
+      // Creating a loop for the stars to light up each star depending on the users mouse
+      for(var i = 0; i < starNumber; i++) {
+            stars[i].src = "url(bw_star2.png)";
+      }
+      // Creating a loop for the stars to unlight each star depending on the users mouse
+      for(var i = starNumber; i < 5; i++) {
+            star[i].src = "url(bw_star.png)";
+      }
+      // Changing the value of the stars based upon how many are highlighted
+      document.getElementById("rating").value = starNumber + "stars";
+      e.target.addEventListener("mouseleave", turnOffStars);
+      e.target.addEventListener("click", function () {
+            e.target.removeEventListener("mouseleave", turnOffStars)
+      });
 }
 
-  
+// Create the turnOffStars function that unlights the stars when they arent hovered over
+function turnOffStars(e) {
+      // Storing all of the star reviews
+      var stars = document.querySelectorAll("span#stars img");
+      stars[i].src = "url(bw_star.png)";
+      document.getElementById("rating").value = " ";
+} 
 
+// Create the updateCount
 
-  
   
   
 /*=================================================================*/
