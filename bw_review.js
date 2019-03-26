@@ -62,7 +62,7 @@ function lightStars(e) {
       }
       // Creating a loop for the stars to unlight each star depending on the users mouse
       for(var i = starNumber; i < 5; i++) {
-            star[i].src = "bw_star.png";
+            stars[i].src = "bw_star.png";
       }
       // Changing the value of the stars based upon how many are highlighted
       document.getElementById("rating").value = starNumber + "stars";
